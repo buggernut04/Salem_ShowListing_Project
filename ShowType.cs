@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ShowListing
 {
-    internal class ShowType
+    public enum ShowType
     {
+        Movie,
+        Theatre,
+        TVSeries,
+        RealityShow
     }
 }
