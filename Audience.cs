@@ -10,7 +10,7 @@ namespace ShowListing
     {
         public Audience(string username, DateTime birthdate, char sex, string nationality, string email, string password) : base(username, birthdate, sex, nationality, email, password)
         {
-
+        
         }
     }
 }

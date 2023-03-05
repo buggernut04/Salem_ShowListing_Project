@@ -14,8 +14,10 @@ namespace ShowListing
         public char Sex { get; set; }
         public string Nationality { get; set; }
         public string Email { get; set; }
-        private string Password;
-
+        
+        // the getters and setters have it's own purpose why it has been separated
+        // it also have a protected modifier because only it will be used in classes that's this class has been derived on
+        protected string Password;
 
         public User(string username, DateTime birthdate, char sex, string nationality, string email, string password)
         {
@@ -24,9 +26,19 @@ namespace ShowListing
             this.Sex = sex;
             this.Nationality = nationality;
             this.Email = email;
-            this.Password = password;
+            SetNewPassword = password;
         }
 
+        public string GetPassword
+        {
+            get { return this.Password; }
+        }
+        
+        public string SetNewPassword
+        {
+            set { this.Password = value; }
+        }
+        
         public static bool IsValidEmail(string email)
         {
             string pattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
@@ -48,6 +60,7 @@ namespace ShowListing
         }
         public string MaskedPassword()
         {
+            // If a user will view it's password its elements will be portrayed in asterisk
             return new string('*', Password.Length);
         }
 
