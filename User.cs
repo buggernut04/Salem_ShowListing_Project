@@ -14,7 +14,7 @@ namespace ShowListing
         public char Sex { get; set; }
         public string Nationality { get; set; }
         public string Email { get; set; }
-        public string Password;
+        private string Password;
 
 
         public User(string username, DateTime birthdate, char sex, string nationality, string email, string password)
@@ -24,7 +24,7 @@ namespace ShowListing
             this.Sex = sex;
             this.Nationality = nationality;
             this.Email = email;
-            Password = password;
+            this.Password = password;
         }
 
         public static bool IsValidEmail(string email)
@@ -45,6 +45,10 @@ namespace ShowListing
                 return false;
 
             return true;
+        }
+        public string MaskedPassword()
+        {
+            return new string('*', Password.Length);
         }
 
         //public abstract double VoteShow();
