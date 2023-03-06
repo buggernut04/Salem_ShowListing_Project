@@ -9,6 +9,7 @@ namespace ShowListing
 {
     public abstract class User
     {
+        // Abstract Class for the Audience and Administrator
         public string UserName { get; set; }
         public DateTime BirthDate { get; set; }
         public char Sex { get; set; }
@@ -60,11 +61,9 @@ namespace ShowListing
         }
         public string MaskedPassword()
         {
-            // If a user will view it's password its elements will be portrayed in asterisk
+            // If a user will view it's password or it will be displayed in its profile, its elements will be portrayed in asterisk
             return new string('*', Password.Length);
         }
-
-        //public abstract double VoteShow();
 
     }
 }

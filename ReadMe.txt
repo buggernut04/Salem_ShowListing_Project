@@ -1,4 +1,5 @@
-The following program is a show Listing application used to rate different kind of shows based on the  users perspective towards the show. It will serve as the world’s most trusted recommendation resources for quality entertainment. 
+***** Description in the Main Program and as well as in the classess ****
+
 The following classes will be implemented in order to construct the said application:
 
 Class Name: User (ABSTRACT)
@@ -11,8 +12,9 @@ Attributes:
 * Email
 * Password
 Methods:
-* isValidEmail
-* isValidPassword
+* SetNewPassword
+* IsValidEmail
+* IsValidPassword
 * MaskedPassword
 
 
@@ -21,15 +23,16 @@ Attributes:
 * Same as the User
 Methods:
 
+
 Class Name: Administrator extends User 
 Attributes:
-* Administrator Key
 * Admin Position(Top, Middle, Low) - enum; each position has a corresponding percentage when they will going to rank a specific show:
 	Top - 20%
 	Middle - 15%
 	Low - 10%
 Methods:
-
+* IsAdministratorKey
+* CodeVerifier
 
 
 Class Name: Show
@@ -37,18 +40,23 @@ Attributes:
 * Title
 * Director
 * Main Cast
+* Show Release
 * Show Type (Movie, Theatre, TV Series, Reality Show) - enum
 * Show Genre - enum
-* Show Rating (G, PG, R, NP) - enum
+* Show Classification (G, PG, R, NP) - enum
+* Audience Ratings
+* Administrator Ratings
 Methods:
 
 
-Class Name: RateShow
-Attributes:
-* Show
-* Audience
-* Administrator
+Class Name: Show Meter
+* Doesn't contain attributes since that this class will only to rate the show that the user give interest into.
 Methods:
+* Audience Rate
+* Administrator Rate
+
+
+
 
 
 

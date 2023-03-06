@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShowListing
 {
-    public enum ShowRating
+    public enum ShowClassification
     {
         G,
         PG,

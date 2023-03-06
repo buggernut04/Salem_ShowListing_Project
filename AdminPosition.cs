@@ -10,6 +10,7 @@ namespace ShowListing
     {
         Top,
         Middle,
-        Bottom
+        Bottom,
+        NotCredited
     }
 }

@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 namespace ShowListing
 {
     public class Administrator : User
-    {
-        private readonly int AdministratorKey;
+    {   
+        // This class is inheriting the User class since Administrator is a
+        // user of the Applicaton.
+
+        // Administrator serve as a proffesional in the field of reviewing a specific show. Requirements are needed to be an administrator of this application.
+
+        // Their interest with the movie is very important if you're an
+        // audience.
+        
         public AdminPosition Position { get; private set; } // Top, Middle, Low
 
         public Administrator(string username, DateTime birthdate, char gender, string nationality, string email, string password ,AdminPosition adminPos) : base(username, birthdate, gender, nationality, email, password)
@@ -28,31 +35,22 @@ namespace ShowListing
             return false;
         }
 
-        public static bool CodeVerifier(Administrator admin, int code)
+        public static AdminPosition CodePositionVerifier(int code)
         {
-            // If a certain user applies to be an administrator.
+            // If a certain user create an account to be an administrator.
             // Code to be inputted:
             // Low/Bottom Position: 212340 - position will be auto generated in the account
             // Middle Position: 372540 - position will be auto generated in the account
             // Top Position: 514323 - position will be auto generated in the account
 
             if(code == 212340)
-            {
-                admin.Position = AdminPosition.Bottom; 
-                return true;
-            }
+                return AdminPosition.Bottom;
             else if(code == 372540)
-            {
-                admin.Position = AdminPosition.Middle;
-                return true;
-            }
+                return AdminPosition.Middle;
             else if(code == 514323)
-            {
-                admin.Position = AdminPosition.Top;
-                return true;
-            }
+                return AdminPosition.Top;
 
-            return false;
+            return AdminPosition.NotCredited;
         }
     }
 }
