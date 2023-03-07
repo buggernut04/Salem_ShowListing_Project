@@ -31,8 +31,8 @@ namespace ShowListing
             this.ShowType = showType;
             this.ShowGenre = showGenre;
             this.ShowClassification = showClassification;
-            this.AudienceRating = 0.0f;
-            this.AdministratorRating = 0.0f;
+            this.AudienceRating = 0.0D;
+            this.AdministratorRating = 0.0F;
         }
         public Show(Show s, double audienceRating)
         {
@@ -66,5 +66,9 @@ namespace ShowListing
             this.AdministratorRating = administratorRating;
         }
 
+        public override string ToString()
+        {
+            return "*****SHOW DESCRIPTION*****" + "\nTitle: " + this.Title + "\nDirector: " + this.Director + "\nMain Cast/s: " + this.MainCast + "\nRelease Date: " + this.ShowRelease + "\nShow Type: " + this.ShowType + "\nShow Genre: " + this.ShowGenre + "\nShow Classification: " + this.ShowClassification + "\n\nAudience Rating: " + (this.AudienceRating * 100) + "%" + "\nAdministrator Rating: " + (this.AdministratorRating * 100) + "%";
+        }
     }
 }

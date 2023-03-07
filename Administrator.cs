@@ -52,5 +52,10 @@ namespace ShowListing
 
             return AdminPosition.NotCredited;
         }
+
+        public override string ToString()
+        {
+            return "*****Profile*****\n" + "Username: " + this.UserName + "\nBirth Date: " + this.BirthDate + "\nSex: " + this.Sex + "\nNationality: " + this.Nationality + "\nEmail: " + this.Email +  "\nAdministrator Position: "+ this.Position;
+        }
     }
 }

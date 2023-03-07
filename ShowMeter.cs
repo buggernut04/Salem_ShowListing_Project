@@ -46,9 +46,10 @@ namespace ShowListing
             // The first parameter will be use to determine what
             // administrator position currently rating is.
 
-            // Formula being used is to add 5 on the current show rating,
-            // then divide it by the total number of audience, lastly
-            // multiply it by 100 to get the percentage.
+            // Formula being used depends on what position the administrator
+            // is (add 10% if the position is in the bottom, 15% if in
+            // middle, and 20% if top),
+            // then divide it by the total number of audience.
 
             // Will return an object
 
@@ -61,7 +62,7 @@ namespace ShowListing
             else if (admin.Position == AdminPosition.Bottom)
                 num = 0.1f;
 
-            Show s = new Show(show, (show.AdministratorRating + num) / numOfAdmin.Count);
+            Show s = new (show, (show.AdministratorRating + num) / numOfAdmin.Count);
 
             return s;
         }

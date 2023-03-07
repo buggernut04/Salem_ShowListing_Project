@@ -32,7 +32,7 @@ namespace ShowListing
         static void Main(string[] args)
         {
             /* APPLICATION NAME - SHOW METER APPLICATION
-              - These application is show listing app used to rate different kind of shows based on the  users perspective towards the show. It will serve as the world’s most trusted recommendation resources for quality entertainment. 
+              - These application is show listing app used to rate different kind of shows, includes Movies, Theatre, TV Series, Reality Shows, based on the  users perspective towards the show. It will serve as the world’s most trusted recommendation resources for quality entertainment. 
                 
               - If they are curious towards a certain show, they might wanna use this application to see if it is worth to watch or not.
 
@@ -45,8 +45,16 @@ namespace ShowListing
               - The two functions of the Main Program has it's corresponding purpose when you log in an account.
 
               - Implementation of the object in the main program will be process soon.
-
             */
+
+            // Making sample objects for experiment
+            Show s1 = new("Avengers", "Ryan Fide", "Chris Evans Robert Downey Jr",  new DateTime(2019, 4, 21), ShowType.Movie, ShowGenre.Action, ShowClassification.PG);
+
+            Console.WriteLine(s1);
+
+            Audience a1 = new("buggernut04", new DateTime(2002, 10, 4), 'M', "Filipino", "21-1-00193@vsu.edu.ph", "sup_1004");
+
+            Console.WriteLine("\n" + a1);
         }
 
 

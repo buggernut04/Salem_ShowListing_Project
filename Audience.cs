@@ -16,5 +16,10 @@ namespace ShowListing
         
         }
 
+        public override string ToString()
+        {
+            return "*****Profile*****\n" + "Username: " + this.UserName + "\nBirth Date: " + this.BirthDate + "\nSex: " + this.Sex + "\nNationality: " + this.Nationality + "\nEmail: " + this.Email;
+        }
+
     }
 }
