@@ -14,57 +14,59 @@ namespace ShowListing
         // a method in the user class, but for me, it is maybe better that
         // the function of the app has it's own class.
 
-        // Every methods that will be define in this class have three
-        // parameters; the first parameter is the user itself, second
-        // parameter will be list of all the user of the application(list of
-        // audience will be separated to the list of administrator), and the
-        // third will be the show that they want to rate.
+        // The attributes will be the list of audience and administrator from both the AudienceRate
+        // and AdministratorRate Class
 
-        public static Show AudienceRate(List<Audience> numOfAudience, Show show)
+        // The rating will be computed in this class as well to get the actual
+        // rating of the show.
+
+        // Every methods that will be define has it's own functionality
+
+
+        public List<AudienceRate> NumOfAudience;
+        public List<AdministratorRate> NumOfAdministrator;
+        
+        public double AudienceRating { get; private set; }
+        public double AdminRating { get; private set; }
+
+        public ShowMeter(List<AudienceRate> numOfaudience)
         {
-            // This function will just simply set the ratings of the show
-            // based on the audience interest towards the show.
-
-            // Formula being used is to add 5% on the current show rating,
-            // then divide it by the total number of audience, lastly
-            // multiply it by 100 to get the percentage.
-
-            // Will return an object
-
-            double num = 0.05;
-               
-            Show s = new(show, ((show.AudienceRating + num) / numOfAudience.Count));
-
-            return s;
+            this.NumOfAudience = numOfaudience;
+            this.AudienceRating = 0.0;
         }
 
-        public static Show AdminRate(Administrator admin, List<Administrator> numOfAdmin, Show show)
+        public ShowMeter(List<AdministratorRate> numOfadministrator)
         {
-            // This function will just simply set the ratings of the show
-            // based on the administrator's interest towards the show.
+            this.NumOfAdministrator = numOfadministrator;
+            this.AdminRating = 0.0;
+        }
 
-            // The first parameter will be use to determine what
-            // administrator position currently rating is.
+        public void ComputeAvgAudienceRate()
+        {
+            // This function will compute the average audience rating percentage of the show
+            // based on the audience interest towards the show.
+
+            foreach(AudienceRate aud in NumOfAudience)
+            {
+                this.AudienceRating += aud.GetAudRate();
+            }
+
+            this.AudienceRating = (this.AudienceRating / NumOfAudience.Count) * 100;
+        }
+
+        public void ComputeAvgAdministratorRate()
+        {
+            // This function will compute average admnistrator rating percentage of the show
+            // based on the administrator's interest towards the show.
 
             // Formula being used depends on what position the administrator
             // is (add 10% if the position is in the bottom, 15% if in
-            // middle, and 20% if top),
-            // then divide it by the total number of audience.
+            // middle, and 20% if top).
 
-            // Will return an object
+            foreach (AdministratorRate admin in this.NumOfAdministrator)
+                this.AdminRating += admin.GetAdminRate();
 
-            float num = 0.0f;
-
-            if (admin.Position == AdminPosition.Top)
-                num = 0.2f;
-            else if (admin.Position == AdminPosition.Middle)
-                num = 0.15f;
-            else if (admin.Position == AdminPosition.Bottom)
-                num = 0.1f;
-
-            Show s = new (show, (show.AdministratorRating + num) / numOfAdmin.Count);
-
-            return s;
+            this.AdminRating = (this.AdminRating / NumOfAdministrator.Count) *  100;
         }
     }
 }

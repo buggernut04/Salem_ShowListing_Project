@@ -34,6 +34,20 @@ Methods:
 * IsAdministratorKey
 * CodeVerifier
 
+Class Name: Administrator Rate
+Attributes:
+* Administrator
+* Show
+Methods:
+* GetAdminRate
+
+Class Name: Audience Rate
+Attributes:
+* Audience
+* Show
+Methods:
+* GetAudRate
+
 
 Class Name: Show
 Attributes:
@@ -44,16 +58,21 @@ Attributes:
 * Show Type (Movie, Theatre, TV Series, Reality Show) - enum
 * Show Genre - enum
 * Show Classification (G, PG, R, NP) - enum
-* Audience Ratings
-* Administrator Ratings
+* NumOfPeopleRated - number of people that rated the show
 Methods:
 
 
 Class Name: Show Meter
-* Doesn't contain attributes since that this class will only to rate the show that the user give interest into.
+Attributes:
+* List<AudienceRate> NumOfAudience;
+* List<AdministratorRate> NumOfAdministrator;     
+* AudienceRating
+* AdminRating
 Methods:
-* Audience Rate
-* Administrator Rate
+* ComputeAvgAudienceRate
+* ComputeAvgAdministratorRate
+
+
 
 
 

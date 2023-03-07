@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ShowListing.Administrator">
+    <Position X="2.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAkAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Administrator.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Position" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ShowListing.Audience">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Audience.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShowListing.Show">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAEAAAAEAGAAAAAAAAAAAAAAAACAABAAAQAAI=</HashCode>
+      <FileName>Show.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ShowClassification" />
+      <Property Name="ShowType" />
+      <Property Name="ShowGenre" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ShowListing.ShowMeter">
+    <Position X="7" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAAAAEgACAAEAAAAAQA=</HashCode>
+      <FileName>ShowMeter.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="NumOfAudience" />
+      <Field Name="NumOfAdministrator" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="ShowListing.User">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAACAABAgAAAAQAAQAABAAAAACAQBAAAAACAA=</HashCode>
+      <FileName>User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShowListing.AudienceRate">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAAAAAAAAAAAAAEAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>AudienceRate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Audience" />
+      <Property Name="Show" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="ShowListing.AdministratorRate">
+    <Position X="7" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAEAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>AdministratorRate.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Admin" />
+      <Property Name="Show" />
+    </ShowAsAssociation>
+  </Class>
+  <Enum Name="ShowListing.AdminPosition">
+    <Position X="2.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAQAAAAAAAIAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>AdminPosition.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ShowListing.ShowClassification">
+    <Position X="12.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAACAAAAQA=</HashCode>
+      <FileName>ShowClassification.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ShowListing.ShowGenre">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAIAAAAAAAAAAIACAAAAAAAQ=</HashCode>
+      <FileName>ShowGenre.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ShowListing.ShowType">
+    <Position X="12.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAEAAAAAAAAAAAAAAAACAAAAAAAAAABAA=</HashCode>
+      <FileName>ShowType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -40,9 +40,9 @@ namespace ShowListing
 
               - The ratings of the show is categorized into two, the Administrator Rating and Audience Rating. (Definition is presented in the said classes.)
                 
-              - Some of the classes is still not structured.
+              - Some of the classes is still not well structured.
 
-              - The two functions of the Main Program has it's corresponding purpose when you log in an account.
+              - The two functions of the Main Program which defined above has it's corresponding purpose when you log in an account.
 
               - Implementation of the object in the main program will be process soon.
             */
